@@ -1,7 +1,9 @@
-function Footer() {
+import styles from '../styles/Footer.module.css'
+
+const Footer = () => {
     return (
-        <footer>
-            <p>I am the footer</p>
+        <footer className={styles.footer}>
+            <p className={styles.p}>I am the footer</p>
         </footer>
     )
 }
