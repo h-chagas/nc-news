@@ -11,7 +11,6 @@ const Articles = ( {articles, setArticles} ) => {
         axios
         .get('https://be-nc-news-api-example.herokuapp.com/api/articles')
         .then(( {data} ) => {
-            console.log(data.articles)
             setArticles(data.articles)
 
         })
