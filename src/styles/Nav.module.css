@@ -1,0 +1,11 @@
+.nav {
+    margin: 2rem auto;
+}
+
+.links {
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}

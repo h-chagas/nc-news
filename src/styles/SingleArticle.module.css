@@ -1,0 +1,48 @@
+.article {
+    
+    background: #e2e2e2;
+    padding: 1rem 1rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    max-width: 400px;
+    
+    
+}
+
+.article_title {
+    font-size: 1.2rem;
+    font-weight: 500; 
+    padding-bottom: 1rem;
+    text-decoration: underline;
+}
+
+.article_author {
+    font-size: .9rem;
+    text-align: left;
+}
+
+.article_date {
+    font-size: .9rem;
+    text-align: left;
+    
+}
+
+.article_topic {
+    font-size: .9rem;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+.article_body{
+    text-align: justify;
+    padding-bottom: 2rem;
+    line-height: 1.3rem;
+}
+
+.article_comment {
+    padding-bottom: 1rem;
+}
+
+.article_votes {
+    padding-bottom: 1rem;
+}
