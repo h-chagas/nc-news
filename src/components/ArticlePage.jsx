@@ -26,7 +26,6 @@ const ArticlePage = () => {
     }, [article_id])
 
     if (error) {
-        console.log(error.code, '<<<<< error');
         return (
             <Error404 />
         )
