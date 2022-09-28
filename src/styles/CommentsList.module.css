@@ -1,0 +1,10 @@
+.ul {
+    padding: 1rem
+}
+
+.li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
