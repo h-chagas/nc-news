@@ -11,9 +11,11 @@ const Articles = () => {
     const { topic_slug } = useParams();
 
     useEffect(() => {
+
         getArticles(topic_slug)
         .then(( {articles} ) => {
             setArticles(articles)
+
 
         })
         .catch(err => {})
