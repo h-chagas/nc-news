@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import ArticlePage from "./components/ArticlePage";
 import Articles from "./components/Articles";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -26,6 +27,10 @@ function App() {
             <Route
                path="/articles"
                element={<Articles/>}
+            />
+            <Route
+               path="/articles/:article_id"
+               element={<ArticlePage/>} //This route goes to a article page
             />
             <Route path="/users" element={<p>Users</p>} />
             <Route path="*" element={<p>404 not found</p>} />
