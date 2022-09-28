@@ -4,16 +4,15 @@ import { getArticle } from "../utils/api";
 import styles from "../styles/SingleArticle.module.css";
 import CommentBox from "./CommentBox";
 import CommentsList from "./CommentsList";
+import Error404 from "./Error404";
 
 
 
 const ArticlePage = () => {
 
     const [article, setArticle] = useState({});
+    const [error, setError] = useState(null);
     const { article_id } = useParams();
-
-    console.log(article_id, '<<< article_id');
-    
 
     useEffect(() => {
         getArticle(article_id)
@@ -21,10 +20,20 @@ const ArticlePage = () => {
             setArticle(data.article)
             
         })
-        .catch(err => {})
+        .catch(err => {
+            setError(err)
+        })
     }, [article_id])
 
+    if (error) {
+        console.log(error.code, '<<<<< error');
+        return (
+            <Error404 />
+        )
+    }
+
     return (
+        
         <main>
             <article className={styles.article}>
                 <h3 className={styles.article_title}>{article.title}</h3>
