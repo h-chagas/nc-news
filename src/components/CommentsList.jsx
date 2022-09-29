@@ -17,7 +17,6 @@ const CommentsList = () => {
     useEffect(() => {
         showCommentsByArticle(article_id)
         .then((data) => {
-            console.log(data.comments);
             setComments(data.comments)
         })
         .catch((err) => {
