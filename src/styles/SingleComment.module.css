@@ -1,0 +1,58 @@
+.li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    text-align: justify;
+    margin: .5rem 1rem;
+    padding: .5rem 1rem;
+    max-width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    
+}
+
+.body {
+    margin-bottom: 1rem;
+}
+
+.author {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: .5rem;
+
+}
+
+
+.votes {
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.236);
+    text-align: center;
+    margin: 1rem auto;
+    padding: .5rem;
+    background: rgb(226, 226, 226);
+    
+}
+
+.voteCommentDiv {
+    text-align: center;
+}
+
+.btnDiv {
+    align-items: center;
+    margin: 0 auto;
+    
+}
+
+
+.leftBtn {
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+
+}
+
+.rightBtn {
+    margin-left: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+
