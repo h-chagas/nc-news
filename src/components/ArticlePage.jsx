@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../utils/api";
 import styles from "../styles/ArticlePage.module.css";
-import CommentBox from "./CommentBox";
+import CommentAdder from "./CommentAdder";
 import CommentsList from "./CommentsList";
 import Error404 from "./Error404";
 import axios from "axios";
@@ -11,6 +11,7 @@ import axios from "axios";
 const ArticlePage = () => {
    const [article, setArticle] = useState({});
    const [error, setError] = useState(null);
+   const [commentPosted, setCommentPosted] = useState(false)
    const { article_id } = useParams();
 
    useEffect(() => {
@@ -28,41 +29,46 @@ const ArticlePage = () => {
    }
 
    const addVoteOnArticle = (article_id) => {
-    setArticle((currentArticle) => {
-        return { ...currentArticle, votes: currentArticle.votes + 1 };
-     });
-    const reqBody = {
-        inc_votes: 1
-    }
+      setArticle((currentArticle) => {
+         return { ...currentArticle, votes: currentArticle.votes + 1 };
+      });
+
+      const reqBody = {
+         inc_votes: 1,
+      };
 
       axios
          .patch(
-            `https://be-nc-news-api-example.herokuapp.com/api/articles/${article_id}`, reqBody)
+            `https://be-nc-news-api-example.herokuapp.com/api/articles/${article_id}`,
+            reqBody
+         )
          .then(({ data }) => {})
          .catch((err) => {
             setArticle((currentArticle) => {
-                return { ...currentArticle, votes: currentArticle.votes - 1 };
-             });
-         })
+               return { ...currentArticle, votes: currentArticle.votes - 1 };
+            });
+         });
    };
 
    const removeVoteOnArticle = (article_id) => {
-    setArticle((currentArticle) => {
-        return { ...currentArticle, votes: currentArticle.votes - 1 };
-     });
-    const reqBody = {
-        inc_votes: -1
-    }
+      setArticle((currentArticle) => {
+         return { ...currentArticle, votes: currentArticle.votes - 1 };
+      });
+      const reqBody = {
+         inc_votes: -1,
+      };
 
       axios
          .patch(
-            `https://be-nc-news-api-example.herokuapp.com/api/articles/${article_id}`, reqBody)
+            `https://be-nc-news-api-example.herokuapp.com/api/articles/${article_id}`,
+            reqBody
+         )
          .then(({ data }) => {})
          .catch((err) => {
             setArticle((currentArticle) => {
-                return { ...currentArticle, votes: currentArticle.votes + 1 };
-             });
-         })
+               return { ...currentArticle, votes: currentArticle.votes + 1 };
+            });
+         });
    };
 
    return (
@@ -99,8 +105,8 @@ const ArticlePage = () => {
             </div>
          </div>
 
-         <CommentBox />
-         <CommentsList />
+         <CommentAdder article_id={article_id} setCommentPosted={setCommentPosted} />
+         <CommentsList commentPosted={commentPosted} />
       </main>
    );
 };
