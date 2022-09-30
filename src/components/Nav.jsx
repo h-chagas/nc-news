@@ -5,8 +5,10 @@ const Nav = () =>  {
     return (
         <nav className={styles.nav}>
             <Link to="/topics" className={styles.links}>Topics</Link>
+
             <Link to="/articles" className={styles.links}>Articles</Link>
-            <Link to="/users" className={styles.links}>Users</Link>
+
+            <Link to="/login" className={styles.links}>Users</Link>
         </nav>
     )
 }
