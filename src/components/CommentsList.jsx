@@ -6,7 +6,7 @@ import Error404 from './Error404';
 import SingleComment from './SingleComment';
 
 
-const CommentsList = () => {
+const CommentsList = ({commentPosted}) => {
 
     const [comments, setComments] = useState([])
     const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ const CommentsList = () => {
         .catch((err) => {
             setError(err);
          });
-    }, [article_id])
+    }, [article_id, commentPosted])
 
     if (error) {
         return <Error404 />;
@@ -35,7 +35,10 @@ const CommentsList = () => {
             {
                 comments.map((comment) => {
                     return (
-                        <SingleComment comment={comment}/>
+                        <SingleComment
+                        key={comment.comment_id}
+                        comment={comment}
+                        />
                     )
                 })
             }
