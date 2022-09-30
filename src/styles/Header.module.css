@@ -6,5 +6,7 @@
 
 .h1 {
     padding: 1rem 0;
-
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -1,0 +1,16 @@
+.loginBtn,
+.logoutBtn {
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold; 
+    font-size: 1rem;
+}
+
+.logoutBtn{
+    border: 1px solid rgba(255, 0, 0, 0.236);
+}
+
+.login_logout_Div {
+    margin: 2rem;
+}
