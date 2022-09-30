@@ -9,8 +9,6 @@ const CommentAdder = ({article_id, setCommentPosted}) => {
     const {isLoggedIn, loggedInUser} = useContext(UserContext);
     const [newComment, setNewComment] = useState('');
         
-// console.log(loggedInUser, '<<<<< loggedInUser');
-
     const handleSubmit = (e, article_id) => {
         
         if (isLoggedIn) {
