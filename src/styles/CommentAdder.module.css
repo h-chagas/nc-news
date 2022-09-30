@@ -1,14 +1,23 @@
-.div {
+.form {
     width: 80%;
     margin: 5rem auto;
     display: flex;
     flex-direction: column
 }
 
+.title {
+    margin-bottom: 1rem;
+}
+
 .textarea {
     border: 1px solid black;
     margin-bottom: 1rem;
     min-height: 6rem;
+}
+
+.inputUsername {
+    border: 1px solid black;
+    margin-bottom: .5rem;
 }
 
 .button {

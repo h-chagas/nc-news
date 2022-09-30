@@ -1,0 +1,10 @@
+.userCardsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2 {
+    padding-top: 2rem;
+}
